@@ -1,0 +1,49 @@
+{
+  "keys": ["plugins", "templates", "worlds", "silos", "spreadsheets", "data"],
+  "meta": {
+    "alias":  "Magi",
+    "name": "PioDashed",
+    "title": "Pio Dashed",
+    "documentation": "/documentation/docs.html",
+    "description": "Multimedia management system for small business software franchise business groups.",
+    "version": 0
+  },
+  "plugins": {
+    "keys": [ "worlds", "silos", "spreadsheets" ],
+    "length": 0
+  },
+  "themes": {
+    "length": 0
+  },
+  "templates": {
+    "length": 0
+  },
+  "worlds": {
+    "proot": "/plugins/worlds/",
+    "default": {
+      "filename":  "basic-world.html"
+    },
+    "length": 1
+  },
+  "silos": {
+    "proot": "/plugins/silos/",
+    "projects": {
+      "default": {
+        "title": "Default Silo",
+        "indexname": "basic-silo.html",
+        "scriptname": "basic-silo.js",
+        "": {
+
+        }
+      }
+    },
+    "length": 1
+    },
+  "DataSheets": {
+    "version":  1
+  },
+  "data": {
+    "length": 0
+  },
+    "IndexedDB": false
+  }

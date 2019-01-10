@@ -1,0 +1,143 @@
+﻿<!doctype HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="." />
+
+    <link rel="stylesheet" href="stylesheets/animations.css" />
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="stylesheet" href="stylesheets/components.css" />
+    <link rel="stylesheet" href="stylesheets/dashed.css" />
+    <link rel="stylesheet" href="plugins/silos/default/basic-silo.css" />
+
+    <!-- [CHROME DEPRECIATED CONTENT] -->
+    <link rel="prefetch" as="text/html" href="icons/icos.html" data-model="true" />
+    <link rel="prefetch" as="application/json" href="lib/JsonSchema.json" data-model="true" />
+    <link rel="prefetch" as="text/javascript" href="plugins/silos/default/basic-silo.js" />
+
+    <script type="text/javascript" src="lib/javascript/cytoscape/dist/cytoscape.umd.js"></script>
+    <script src="lib/javascript/lodash/lodash.js"></script>
+    <script type="text/javascript" src="lib/javascript/cytoscape/dist/cytoscape-edgehandles.js"></script>
+    <script type="text/javascript" src="lib/javascript/cytoscape/dist/cytoscape-cxtmenu.js"></script>
+    <script src="lib/javascript/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script type="text/javascript" src="lib/javascript/xtag/dist/x-tag-ce.js"></script>
+    <script type="text/javascript" src="lib/javascript/xtag/bundles/dashing-core.js" async></script>
+
+    <title>Pio Dashed</title>
+</head>
+<body>
+    <!-- == =====
+        == @name X-EXTENSION
+        ==
+        == @idea: Placing the `#` identifier uses the built in log book rather than one in the document alreadt.
+    ===== == -->
+    <x-extension type="webapp" id="pio_root_extension" class="dashio-extension" theme="dashboard-panels"
+                 append-resources="true"
+                 data-grid-template="1 3">
+        <!-- X-HEADER -->
+        <x-header id="header" class="header slim-bar" type="startup" position="top"
+                  minimizer="resize-controller" minimizer-ico="caret-circle-up" minimized-class="slim-bar" normalized-class="top-bar" box-shadow>
+            <div id="console-toolbar" class="toolbar title" data-local-form="console_format_opts">
+                <strong class="main-title">Pio Dashed</strong>
+                <button id="toggle-setup" class="toggle-btn float-right" active="true">
+                    <svg width="80px" height="30px">
+                        <use xlink:href="#cogs" x="-20px"></use>
+                        <use xlink:href="#database" x="30px" transform="scale(.75)"></use>
+                    </svg>
+                </button>
+            </div>
+        </x-header>
+
+        <!-- X-BOOK -->
+        <x-book id="datasheet" page="1" pages="4" class="book" type="webapp" theme="plugin-book" mode="default">
+            <button page-left="true" book="dash_book">
+                <svg width="30px" height="30px">
+                    <use xlink:href="#puzzle-piece" x="5px" y="0px" width="15px" height="15px" />
+                    <use xlink:href="#arrow-alt-from-right" x="0px" y="15px" width="15px" height="15px" />
+                </svg>
+            </button>
+            <button page-right="true" book="dash_book">
+                <svg width="30px" height="30px">
+                    <use xlink:href="#puzzle-piece" x="10px" y="0px" width="15px" height="15px" />
+                    <use xlink:href="#arrow-alt-from-left" x="15px" y="15px" width="15px" height="15px" />
+                </svg>
+            </button>
+            <!-- X-PAGE -->
+            <x-page id="datasheet-container" class="webapp webapp-page webapp-panel" page="1" box-shadow=""
+                    theme="default" webapp-title="DataSheets"
+                    transition-start="slide-right" transition-end="slide-down"
+                    data-grid-template="1 3" active="true" selected="true">
+                <header id="startup-header" class="header header-startup" data-grid-template="2 1">
+                    <h5 class="no-margin no-padding inline-block font-fitted">Dashboard || Media Management System</h5>
+                    <x-tabbox id="spreadsheet-tabbox" transition selected-index="0" tab-position="top">
+                        <menu class="tabs-menu">
+                            <button data-icon="add" hover="highlight" data-active="focused-highlight" index="0" selected>Create Space</button>
+                            <button data-icon="open" hover="highlight" data-active="focused-highlight" index="1">Open Space</button>
+                            <button data-icon="archive" hover="highlight" data-active="focused-highlight" index="2">Remove Space</button>
+                        </menu>
+                        <ul>
+                            <li class="inline-flex" selected="">
+                                <form id="create-space" class="table inline-block form-section">
+                                    <label>
+                                        <span>Space Name: </span>
+                                        <input type="text" placeholder="Create Space." /><input type="button" value="Create" />
+                                    </label>
+                                </form>
+                            </li>
+                            <li class="inline-flex">
+                                <form id="open-space" class="table form-section">
+                                    <label>
+                                        <span>Space Name: </span>
+                                        <input type="text" placeholder="Open Space." /><input type="button" value="Open" />
+                                    </label>
+                                </form>
+                            </li>
+                            <li class="inline-flex">
+                                <form id="remove-space" class="table form-section">
+                                    <label>
+                                        <span>Space Name: </span>
+                                        <input type="text" placeholder="Remove Space." /><input type="button" value="Remove" />
+                                    </label>
+                                </form>
+                            </li>
+                        </ul>
+                    </x-tabbox>
+                </header>
+                <section id="startup-section" class="column-flex">
+                    
+                </section>
+                <footer>
+                    <menu>
+                        <button>DOCS</button>
+                    </menu>
+                </footer>
+            </x-page>
+        </x-book>
+
+        <!-- X-FOOTER -->
+        <x-footer class="footer" type="startup" mode="default" data-resize="extension-footer">
+            <h3>Data Deck</h3>
+            <nav type="defaultUiEvents" mode="default" showing edge="bottom" cover>
+            </nav>
+        </x-footer>
+    </x-extension>
+
+    <!-- @name X-MODAL -->
+    <x-modal id="dashed-prompt" class="prompt box-shadow-lite" type="startup" theme="body-panel" overlay="" click-hide=""
+             database-table="true"
+             messages-allowed="true"
+             response-target="#startup-section"
+             button-toggle="toggle-setup"
+             transition-duration="1s"
+             transition-start="fade-in"
+             transition-end="fade-out"
+             data-grid-template="2 2">
+    </x-modal>
+</body>
+</html>
+
+
+
+
+
+

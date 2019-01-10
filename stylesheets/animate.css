@@ -1,0 +1,139 @@
+@keyframes crisp-fireFont {
+    0% {
+        color: rgb(75,75,0);
+    }
+
+    20% {
+        color: rgb(95,95,0);
+    }
+
+    40% {
+        color: rgb(125,25,0);
+    }
+
+    60% {
+        color: rgb(155,155,0);
+    }
+
+    80% {
+        color: rgb(175,175,0);
+    }
+
+    100% {
+        color: rgb(255,200,0);
+    }
+}
+
+@keyframes crisp-green {
+    0% {
+        border-bottom: 4px solid rgb(0,125,0);
+    }
+
+    20% {
+        border-bottom: 4px solid rgb(0,125,0);
+    }
+
+    40% {
+        border-bottom: 4px solid rgb(50,125,50);
+    }
+
+    60% {
+        border-bottom: 4px solid rgb(75,155,75);
+    }
+
+    80% {
+        border-bottom: 4px solid rgb(75,175,75);
+    }
+
+    100% {
+        border-bottom: 4px solid rgb(75,255,75);
+    }
+}
+@keyframes toTop {
+    from {
+        top: 57px;
+    }
+
+    to {
+        top: 0px;
+    }
+}
+
+@keyframes toBottom {
+    from {
+        top: 0px;
+    }
+
+    to {
+        top: 57px;
+    }
+}
+
+@keyframes progress-bar {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes load-spinner {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes fadeOut {
+    0%{ opacity: 1; }
+    100%{ opacity: 0; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    1000% { opacity: 1; }
+}
+
+@keyframes peek-a-boo {
+    0% {
+        top: -50px;
+        opacity: 0;
+    }
+
+    50% {
+        top: 0px;
+        opacity: 1;
+    }
+
+    100% {
+        top: -50px;
+        opacity: 0;
+    }
+}
+
+@keyframes bg-slides {
+    0% {
+        background-image: url(../images/backgrounds/island-beach@5x.png);
+    }
+    33% {
+        background-image: url(../images/backgrounds/stars@4x.png);
+    }
+    66% {
+        background-image: url(../images/backgrounds/submerged-inocean@3x.png);
+    }
+    100% {
+        background-image: url(../images/backgrounds/sunset-beach@5x.png);
+    }
+}
+
+.spinner-1 {
+    animation-name: load-spinner;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    position: relative;
+}

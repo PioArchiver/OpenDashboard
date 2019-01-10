@@ -1,0 +1,19 @@
+/** @docname var */
+:root {
+    --json-key-bordercolor: rgba(225,225,255,1) 2px dotted;
+    --json-key-bgcolor: rgba(175,215,215,1);
+    --json-value-bordercolor: rgba(215,215,215,1) 2px dotted;
+    --json-value-bgcolor: rgba(175,225,255,1);
+    --hexagrid-key-colwidth: 20%;
+    --keyed-hexagrid-cols: var(--hexagrid-key-colwidth) auto var(--hexagrid-key-colwidth) auto var(--hexagrid-key-colwidth) auto;
+    --heptagrid-key-colwidth: 10%;
+    --keyed-heptagrid-cols: var(--heptagrid-key-colwidth) auto var(--heptagrid-key-colwidth) auto var(--heptagrid-key-colwidth) auto auto;
+    --menubar-height: 75px;
+    --slimbutton-height: 55px;
+    --slimbar-height: var(--slimbutton-height);
+    --lite-gray: rgba(215,215,215,1);
+    --opac-lite-gray: rgba(215,215,215,.5);
+    --centered-gridpanel-height: calc(100% - var(--slimbutton-height) + var(--menubar-height));
+    --pio-header-bgcolor: rgba(78,115,155,.5);
+    --table-messages-font: arial 13px;
+}

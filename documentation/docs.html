@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Documentation | Pio Dashed</title>
+</head>
+<body>
+    <!-- ===== 
+    == Template application container for building your web application docs.
+    ===== -->
+    <x-extension type="startup" data-meta="documentation-exentension">
+        <x-book type="startup" data-meta="docs-book">
+            <!-- == 
+            == Cover Page
+            == -->
+            <x-page type="startup" data-meta="cover-page" active>
+                <header data-meta="page-header">
+                    <x-tabbox class="page-header-tabbox" data-meta="coverpage-header-tabbox">
+                        <menu class="page-tabbox-menu">
+                            <button class="docs-search" data-icon="search">Search</button>
+                        </menu>
+                        <ul class="tabbox-list-items">
+                            <li data-meta="search-tab">
+                                <form>
+                                    <h1>Searches</h1>
+                                    <label>
+                                        <strong>Keyword: </strong>
+                                        <input type="text" placeholder="Search for a keyword" />
+                                    </label>
+                                </form>
+                            </li>
+                        </ul>
+                    </x-tabbox>
+                </header>
+                <section data-meta="page-section">
+                    <article data-meta="search-results">
+                        <h1>Search Results</h1>
+                        <x-shiftbox data-meta="search-results-array">
+                            <aside></aside>
+                            <aside></aside>
+                        </x-shiftbox>
+                    </article>
+                    <article>
+                        <h1>Pio Dashboard Documentation</h1>
+                        <p></p>
+                    </article>
+                </section>
+                <footer data-meta="page-footer">
+
+                </footer>
+            </x-page>
+        </x-book>
+    </x-extension>
+</body>
+</html>

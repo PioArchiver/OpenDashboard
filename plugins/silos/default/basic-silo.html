@@ -1,0 +1,122 @@
+﻿<template>
+    <div id="basic-silo-template" class="silo-cytograph"></div>
+    <div id="basic-silo-json" class="memory">{
+        "meta": { 
+            "template": {
+                "title": "Basic Silo Template"
+            },
+            "nonprofit": {
+                "organization": "CytoscapeJS",
+                "organizationURL": "js.cytoscape.org",
+                "donations": "None Listed"
+            },
+            "title": "Cytoscape: Start Demo",
+            "author": "MaxFranz",
+            "github": {
+                "repoURL": "",
+                "maintainers": ""
+            }
+        },
+        "scripts": {
+            "keys" : ["basicSilo"],
+            "basicSilo": "plugins/silos/default/basic-silo.js"
+        },
+        "elements": { 
+    
+        }, 
+        "styles": {  } 
+    }</div>
+    <style type="text/css"> 
+        #silo-wspace { 
+            display: grid; 
+            grid-template-columns: 800px; 
+            grid-template-rows: 50px 100px auto; 
+        } 
+        #basic-silo-template { 
+            background-color: lightskyblue; 
+            height: 375px; 
+            width: 800px; 
+        } 
+
+        @media screen and (max-width: 720px ) { 
+            #silo-wspace {
+                display: grid; 
+                grid-template-columns: 800px; 
+                grid-template-rows: 50px 100px auto; 
+            } 
+            #basic-silo-template { 
+                background-color: lightskyblue; 
+                height: 375px; 
+                width: 350px; 
+            } 
+        }
+
+        @media screen and (max-height: 400px ) {
+            #silo-wspace {
+                display: grid;
+                grid-template-columns: 800px;
+                grid-template-rows: 50px 100px auto;
+            }
+            #basic-silo-template {
+                background-color: lightskyblue;
+                height: 300px;
+                width: 350px;
+            }
+        }
+
+        @media screen and (max-height: 500px ) { 
+            #silo-wspace { 
+                display: grid; 
+                grid-template-columns: 800px; 
+                grid-template-rows: 50px 100px auto; 
+            } 
+            #basic-silo-template {
+                background-color: lightskyblue;
+                height: 300px;
+                width: 350px;
+            }
+        }
+
+        @media screen and (max-height: 600px ) {
+            #silo-wspace {
+                display: grid;
+                grid-template-columns: 800px;
+                grid-template-rows: 50px 100px auto;
+            }
+
+            #basic-silo-template {
+                background-color: lightskyblue;
+                height: 300px;
+                width: 350px;
+            }
+        }
+
+        @media screen and (max-height: 700px ) {
+            #silo-wspace {
+                display: grid;
+                grid-template-columns: 800px;
+                grid-template-rows: 50px 100px auto;
+            }
+
+            #basic-silo-template {
+                background-color: lightskyblue;
+                height: 300px;
+                width: 350px;
+            }
+        }
+
+        @media screen and (max-height: 800px ) {
+            #silo-wspace {
+                display: grid;
+                grid-template-columns: 800px;
+                grid-template-rows: 50px 100px auto;
+            }
+
+            #basic-silo-template {
+                background-color: lightskyblue;
+                height: 300px;
+                width: 860px;
+            }
+        }
+    </style>
+</template>

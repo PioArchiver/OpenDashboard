@@ -1,0 +1,39 @@
+<x-json>
+{
+	"meta": {
+	"id": "PioDashed",
+	"title": "Pio Dashed",
+	"documentation": "/documentation/docs.html",
+	"description": "Multimedia management system for small business software franchise business groups.",
+	"version": 0
+	},
+	"plugins": {
+		"keys": [ "worlds", "silos", "spreadsheets" ],
+		"length": 0
+	},
+	"themes": {
+		"length": 0
+	},
+	"templates": {
+		"length": 0
+	},
+	"worlds": {
+		"length": 0
+	},
+	"silos": {
+		"length": 0
+	},
+	"spreadsheets": {
+		"length": 0
+	},
+	"data": {
+		"notes1": "Create a silos index note system.",
+		"notes2": "Finish the json management plugin.",
+		"notes3": "Finish the spreadsheet management plugin.",
+		"notes4": "Finish the silos management plugin.",
+		"notes5": "Finish the world management plugin.",
+		"length": 5
+	},
+	"indexedDB": false
+}
+</x-json>

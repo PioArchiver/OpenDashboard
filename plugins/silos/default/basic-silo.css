@@ -1,0 +1,35 @@
+﻿    #graphing-plugin > section {
+        grid-template-columns: 88px auto;
+        grid-template-rows: 65px auto;
+        padding: 0px;
+    }
+        #graphing-plugin > section > aside[toolbar-position="left"] {
+            grid-template-columns: 88px;
+            grid-template-rows: auto auto auto;
+        }
+            #graphing-plugin > section > aside[toolbar-position="left"] > x-tabbox {
+                grid-template-columns: 88px;
+                grid-template-rows: auto auto auto;
+                border-right: dotted black 1px;
+                border-bottom: dotted black 1px;
+                overflow: visible;
+            }
+                #graphing-plugin > section > aside[toolbar-position="left"] > x-tabbox > menu > button {
+                    border-right: dotted black 1px;
+                    border-bottom: dotted black 1px;
+                    background-color: rgba(145,145,145,.5);
+                }
+                    #graphing-plugin > section > aside[toolbar-position="left"] > x-tabbox > menu > button:hover {
+                        transition: background-color ease-in-out .5s;
+                        background-color: rgba(245,245,145,.25);
+                    } 
+                    #graphing-plugin > section > aside[toolbar-position="left"] > x-tabbox > menu > button > svg {
+                        border-radius: 50px 50px 5px 50px;
+                        background-color: ghostwhite;
+                    }
+
+            #graphing-plugin > section > div.selected-content {
+                background-color: rgba(255,255,255,.9);
+                padding: 10px;
+            }
+        
