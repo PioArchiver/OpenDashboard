@@ -12,7 +12,7 @@ node_modules/*
 .config
 .backup
 package-lock.json
-package.jsons
+package.json
 gulpfile.js
 bower.json
 .vs/*
