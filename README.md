@@ -11,8 +11,8 @@ ___
 ### Installing the Dashboard Locally. 
 1. Create a GitHub account. 
 2. Clone this reposiotory.  
-    a. Rename it. [Optional]
-    b. Set the repository to be viewable from the GitHub domain. [Optional]
+    a. Rename it. [Optional]  
+    b. Set the repository to be viewable from the GitHub domain. [Optional]  
 
 
 ### Contributing  
