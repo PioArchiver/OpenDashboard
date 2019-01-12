@@ -9,7 +9,7 @@
     "version": 0
   },
   "plugins": {
-    "keys": [ "worlds", "silos", "spreadsheets" ],
+    "keys": [ "worlds", "silos", "DataSheets" ],
     "length": 0
   },
   "themes": {
@@ -18,14 +18,14 @@
   "templates": {
     "length": 0
   },
-  "worlds": {
+  "Worlds": {
     "proot": "/plugins/worlds/",
     "default": {
       "filename":  "basic-world.html"
     },
     "length": 1
   },
-  "silos": {
+  "Silos": {
     "proot": "/plugins/silos/",
     "projects": {
       "default": {

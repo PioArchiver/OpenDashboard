@@ -87,5 +87,7 @@
         wheelSensitivity: 1,
         pixelRatio: 'auto'
     });
+    
+
 })();
     

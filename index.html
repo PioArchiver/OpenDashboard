@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="description" content="." />
 
-    <link rel="stylesheet" href="stylesheets/animations.css" />
     <link rel="stylesheet" href="stylesheets/styles.css" />
     <link rel="stylesheet" href="stylesheets/components.css" />
     <link rel="stylesheet" href="stylesheets/dashed.css" />
@@ -39,30 +38,30 @@
                 <strong class="main-title">Pio Dashed</strong>
                 <button id="toggle-setup" class="toggle-btn float-right" active="true">
                     <svg width="80px" height="30px">
-                        <use xlink:href="#cogs" x="-20px"></use>
-                        <use xlink:href="#database" x="30px" transform="scale(.75)"></use>
+                        <use xlink:href="#cogs" x="-10px" y="5"transform="scale(.75)"></use>
+                        <use xlink:href="#database" x="50px" y="25" transform="scale(.5)"></use>
                     </svg>
                 </button>
             </div> 
         </x-header>
 
         <!-- X-BOOK -->
-        <x-book id="dash_book" application-start-page="#welcome-screen" page="1" pages="4" class="book" type="plugins" theme="plugin-book" mode="default" data-resize="extension-book">
+        <x-book id="dash_book" class="book" application-start-page="#welcome-screen" type="plugins" theme="plugin-book" page="1" pages="4" data-resize="extension-book">
             <button page-left="true" book="dash_book">
-                <svg width="30px" height="30px">
-                    <use xlink:href="#puzzle-piece" x="5px" y="0px" width="15px" height="15px" />
-                    <use xlink:href="#arrow-alt-from-right" x="0px" y="15px" width="15px" height="15px" />
+                <svg width="100px" height="30px">
+                    <use xlink:href="#puzzle-piece" x="29px" y="15px" width="15px" height="15px" fill="white"></use>
+                    <use xlink:href="#arrow-alt-from-right" x="0px" y="0px" width="25px" height="25px" fill="white"></use>
                 </svg>
             </button>
             <button page-right="true" book="dash_book">
-                <svg width="30px" height="30px">
-                    <use xlink:href="#puzzle-piece" x="10px" y="0px" width="15px" height="15px" />
-                    <use xlink:href="#arrow-alt-from-left" x="15px" y="15px" width="15px" height="15px" />
+                <svg width="100px" height="30px">
+                    <use xlink:href="#puzzle-piece" x="72px" y="15px" width="15px" height="15px"></use>
+                    <use xlink:href="#arrow-alt-from-left" x="50px" y="0px" width="25px" height="25px"></use>
                 </svg>
             </button>
             <!-- X-PAGE -->
             <x-page id="welcome-screen" class="plugin plugin-page plugin-panel" page="1" box-shadow="" 
-                    type="plugin" theme="default" plugin-title="spaces" 
+                    type="webapp" theme="default" plugin-title="Spaces" 
                     transition-start="slide-right" transition-end="slide-down" 
                     data-grid-template="1 3" active="true" selected="true"> 
                 <header id="startup-header" class="header header-startup" data-grid-template="2 1">
@@ -172,7 +171,10 @@
                 <footer></footer>
             </x-page>
             <!-- X-PAGE -->
-            <x-page id="physics2d-plugin" class="plugin plugin-page plugin-panel" type="plugin" theme="default" plugin-title="worlds" page="3" transition-start="slide-right" transition-end="slide-down" box-shadow="" data-grid-template="1 3">
+            <x-page id="physics2d-plugin" class="plugin plugin-page plugin-panel" type="plugin" theme="default" page="3" 
+                    plugin-title="Worlds" 
+                    transition-start="slide-right" transition-end="slide-down" 
+                    box-shadow="" data-grid-template="1 3">
                 <header id="physics2d-header" class="header header-physics" data-grid-template="2 1">
                     <h5 class="no-margin no-padding inline-block font-fitted">Physics World Management</h5>
                     <x-tabbox id="physics-tabbox" type="toolbox" transition selected-index="0" tab-position="top">
@@ -225,7 +227,7 @@
             <x-page id="graphing-plugin" class="plugin plugin-page plugin-panel" page="4" 
                     data-grid-template="1 3" 
                     type="plugin" theme="default" 
-                    plugin-title="silos" active-content="plugins/silos/default/basic-silo.html"
+                    plugin-title="Silos" active-content="plugins/silos/default/basic-silo.html"
                     page-workspace="silo-wspace" page-sidebar="section-toolbar"
                     transition-start="slide-right" transition-end="slide-down">
                 <header id="graphing-header" class="header header-graphing" data-grid-template="2 1">
@@ -261,19 +263,19 @@
                 </header>
                 <section id="graphing-section" grid-template="2 2">
                     <h1>Work Board</h1>
-                    <aside id="section-toolbar" class="toolbar" toolbar-position="left" grid-template="1 3" grid-columns="1" grid-rows="1 3">
-                        <x-tabbox transition selected-index="0" tab-position="left">
+                    <aside id="section-toolbar" class="toolbar" toolbar-position="left" grid-template="3 1" grid-columns="1" grid-rows="2 2">
+                        <x-tabbox transition selected-index="0" tab-position="top">
                             <menu>
                                 <button index="0" hover="highlight" data-active="focused-highlight">
                                     <svg width="35px" height="35px">
-                                        <use xlink:href="#hand-pointer" x="5" y="3" width="20px" height="20px" />
-                                        <use xlink:href="#microscope" x="20" y="17" width="15px" height="15px" />
+                                        <use xlink:href="#hand-pointer" x="5" y="3" width="20px" height="20px"></use>
+                                        <use xlink:href="#microscope" x="20" y="17" width="15px" height="15px"></use>
                                     </svg>
                                 </button>
                                 <button index="1" hover="highlight" data-active="focused-highlight">
                                     <svg width="35px" height="35px">
-                                        <use xlink:href="#layer-group" x="5" y="3" width="20px" height="20px" />
-                                        <use xlink:href="#microscope" x="20" y="17" width="15px" height="15px" />
+                                        <use xlink:href="#layer-group" x="5" y="3" width="20px" height="20px"></use>
+                                        <use xlink:href="#microscope" x="20" y="17" width="15px" height="15px"></use>
                                     </svg>
                                 </button>
                             </menu>
@@ -281,29 +283,29 @@
                                 <li selected="">
                                     <button type="button">
                                         <svg width="30px" height="30px">
-                                            <use xlink:href="#bullseye-pointer" x="5" y="3" width="25px" height="25px" />
+                                            <use xlink:href="#bullseye-pointer" x="5" y="3" width="25px" height="25px"></use>
                                         </svg>
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button">
                                         <svg width="35px" height="35px">
-                                            <use xlink:href="#bullseye-arrow" x="5" y="3" width="25px" height="25px" />
+                                            <use xlink:href="#bullseye-arrow" x="5" y="3" width="25px" height="25px"></use>
                                         </svg>
                                     </button>
                                 </li>
                             </ul>
                         </x-tabbox>
-                        <x-tabbox transition selected-index="0" tab-position="left">
+                        <x-tabbox transition selected-index="0" tab-position="top">
                             <menu>
                                 <button index="0" hover="highlight" data-active="focused-highlight">
                                     <svg width="35px" height="35px">
-                                        <use xlink:href="#paint-brush-alt" x="5" y="3" width="25px" height="25px" /> 
+                                        <use xlink:href="#paint-brush-alt" x="5" y="3" width="25px" height="25px"></use>
                                     </svg>
                                 </button>
                                 <button index="1" hover="highlight" data-active="focused-highlight">
                                     <svg width="35px" height="35px">
-                                        <use xlink:href="#pen" x="5" y="3" width="25px" height="25px" />
+                                        <use xlink:href="#pen" x="5" y="3" width="25px" height="25px"></use>
                                     </svg>
                                 </button>
                             </menu>
@@ -311,29 +313,29 @@
                                 <li>
                                     <button type="button">
                                         <svg width="35px" height="35px">
-                                            <use xlink:href="#paint-brush-alt" x="5" y="3" width="25px" height="25px" /> 
+                                            <use xlink:href="#paint-brush-alt" x="5" y="3" width="25px" height="25px"></use> 
                                         </svg>
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button">
                                         <svg width="35px" height="35px">
-                                            <use xlink:href="#draw-polygon" x="5" y="3" width="25px" height="25px" />
+                                            <use xlink:href="#draw-polygon" x="5" y="3" width="25px" height="25px"></use>
                                         </svg>
                                     </button>
                                 </li>
                             </ul>
                         </x-tabbox>
-                        <x-tabbox transition selected-index="0" tab-position="left">
+                        <x-tabbox transition selected-index="0" tab-position="top">
                             <menu>
                                 <button id="color-tool-selections" index="0" hover="highlight" data-active="focused-highlight">
                                     <svg width="35px" height="35px">
-                                        <use xlink:href="#palette" x="5" y="3" width="25px" height="25px" />
+                                        <use xlink:href="#palette" x="5" y="3" width="25px" height="25px"></use>
                                     </svg>
                                 </button>
                                 <button index="1" hover="highlight" data-active="focused-highlight">
                                     <svg width="35px" height="35px">
-                                        <use xlink:href="#pallet" x="5" y="3" width="25px" height="25px" />
+                                        <use xlink:href="#pallet" x="5" y="3" width="25px" height="25px"></use>
                                     </svg>
                                 </button>
                             </menu>
@@ -341,21 +343,21 @@
                                 <li>
                                     <button type="button">
                                         <svg width="35px" height="35px">
-                                            <use xlink:href="#palette" x="5" y="3" width="25px" height="25px" />
+                                            <use xlink:href="#palette" x="5" y="3" width="25px" height="25px"></use>
                                         </svg>
                                     </button>
                                 </li>
                                 <li>
                                     <button type="button">
                                         <svg width="35px" height="35px">
-                                            <use xlink:href="#fill" x="5" y="3" width="25px" height="25px" />
+                                            <use xlink:href="#fill" x="5" y="3" width="25px" height="25px"></use>
                                         </svg>
                                     </button>
                                 </li>
                             </ul>
                         </x-tabbox>
                     </aside>
-                    <div id="silo-wspace" class="selected-content" grid-columns="2 3" grid-rows="2 3"></div>
+                    <div id="silo-wspace" class="selected-content" grid-columns="2 3" grid-rows="1 3"></div>
                 </section>
                 <footer>
                     <x-tabbox selected-index="0" tab-position="top">
