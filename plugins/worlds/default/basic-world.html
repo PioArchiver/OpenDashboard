@@ -1,9 +1,147 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>basic-silo</title>
-</head>
-<body>
-    
-</body>
-</html>
+﻿<template>
+    <div id="basic-world-template" class="world-environment">
+        <section>
+            <img src="icons/drop-area.png" />
+        </section>
+        <form>
+            <label><span>Upload: </span> <input type="text" placeholder="Upload Image"/></label>
+            <input type="button" value="Upload" />
+        </form>
+    </div>
+    <div id="basic-world-json" class="memory">{ 
+        "meta": {
+            "author": "PioArchiver",
+            "template": {
+            "title": "Worlds: Default Workspace"
+        },
+        "nonprofit": {
+            "organization": "ThreeJS",
+            "organizationURL": "threejs.org",
+            "donations": "None Listed"
+        },
+        "github": {
+            "repoURL": false,
+            "maintainers": false
+        }
+        },
+        "scripts": {
+        "keys" : ["basicWorld"],
+        "basicWorld": "plugins/worlds/default/basic-world.js"
+        }    
+    }</div>
+    <style type="text/css">
+        #basic-world-template {
+            display: grid;
+            width: 100%;
+            height: 165px;
+            background-color: azure;
+        }
+            #world-plugin {
+                grid-template-rows: 75px auto 50px;
+            }
+                #world-plugin > header {
+                    background-color: rgba(75, 75, 75, 1);
+                }
+                    #world-plugin > header > h5 {
+                        color: antiquewhite; 
+                        text-align: center; 
+                        padding: 5px; 
+                    }
+            #basic-world-template > section {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                background-color: azure;
+                grid-row: 2 / span 1;
+                height: 125px;
+                margin-left: .5%;
+                border: none;
+            }
+            #world-plugin > footer {
+                
+            }
+                #basic-world-template > section > form {
+                    height: 140px; 
+                }
+                #basic-world-template > section > img {
+                    width: 100%;
+                    height: 100%;
+                }
+        #world-plugin > section > x-tabbox {
+            height: 75%;
+        }
+            #world-plugin > section > x-tabbox > menu {
+                height: 50%;
+                width: 100px;
+            }
+                #world-plugin > section > x-tabbox > menu > strong {
+                    border: 1px solid black;
+                    background-color: peru;
+                    text-align: center;
+                    border-radius: 75px;
+                    vertical-align: middle;
+                    line-height: 100%;
+                }
+                    #world-plugin > section > x-tabbox > menu > strong > span {
+                        border: 1px solid black;
+                        background-color: white;
+                        text-align: center;
+                        border-radius: 75px;
+                        vertical-align: middle;
+                        line-height: 100%;
+                        margin: 10px;
+                        position: relative;
+                        display: inline-block;
+                        padding: 10px;
+                    }
+                #world-plugin > section > x-tabbox > menu > button {
+                    border: 1px solid black;
+                    border-left: none;
+                    border-radius: 5%;
+                }
+                    #world-plugin > section > x-tabbox > menu > button:hover {
+                        border: 1px solid black;
+                        border-left: none;
+                        transition: background-color ease-in-out .25s;
+                    }
+                    #world-plugin > section > x-tabbox > menu > button[selected] {
+                        transition: background-color ease-in-out .25s;
+                        border: none;
+                        border-right: 1px dotted black;
+                        background-color: aqua;
+                    }
+            #world-plugin > section > x-tabbox > ul {
+                background-color: rgba(98,98,98,.75);
+            }
+                    #world-plugin > section > x-tabbox > ul > li > section {
+                        width: 40%;
+                        height: 30%;
+                        padding: 18px;
+                        margin: 10px;
+                        overflow-y: scroll;
+                        overflow-x: auto ;
+                    }
+                    @media screen and (max-width: 600px) {
+                        #world-plugin {
+                            grid-template-rows: 50px auto 25px;
+                        }
+                            #world-plugin > header > h5 {
+                                font-size: 2vw;
+                                line-height: 100%;
+                            }
+                                #world-plugin > section > x-tabbox > ul > li > section {
+                                    width: 100%;
+                                    height: 30%;
+                                    padding: 0px;
+                                    margin: 0px;
+                                }
+                                    #world-plugin > section > x-tabbox > ul > li > section > h3 {
+                                        margin: 3px;
+                                    }
+                                    #world-plugin > section > x-tabbox > ul > li > section > hr {
+                                        margin: 1px;
+                                    }
+
+                    }
+    </style>
+</template>

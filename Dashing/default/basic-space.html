@@ -1,0 +1,261 @@
+﻿<template>
+    <div id="space-template">
+        <aside id="pluginspaces-menu">
+            <x-shiftbox id="shiftboxUI" class="shiftboxUI" type="pluginmenu" tapclose="">
+                <section>
+                    <menu id="shiftbox-menu" class="shiftbox-menu">
+                        <h5>Plugin Spaces</h5>
+                    </menu>
+                </section>
+
+            </x-shiftbox>
+        </aside>
+        <form id="space-form">
+            <aside>
+                <label><strong>What is your space used for?</strong></label>
+                <label>
+                    <input id="datalist-search-input" list="_all_space_types_list" class="inline-block" placeholder="Choose an available option." />
+                    <button type="button" class="inline-block">
+                        <svg class="rotate-up" height="100%">
+                            <use xlink:href="#caret-down" width="20px" height="20px" x="0px" y="0px" />
+                        </svg>
+                    </button>
+                </label>
+                <label><strong>Search for a specific type:</strong></label>
+                <div class="radio-opts inline-flex fill-100px">
+                    <label><span>Data Sheets List</span> <input type="radio" value="DataSheetsDatalist" name="list-type-opts" /></label><strong class="hlist-spacing">|</strong>
+                    <label><span>Silos Type List</span> <input type="radio" value="SilosDatalist" name="list-type-opts" /></label><strong class="hlist-spacing">|</strong>
+                    <label><span>Worlds Type List</span> <input type="radio" value="WorldsDatalist" name="list-type-opts" /></label><strong class="hlist-spacing">|</strong>
+                    <label><span>All</span> <input type="radio" value="_all_space_types_list" name="list-type-opts" checked /></label>
+                </div>
+            </aside>
+
+            <aside>
+                <label class="inline-block"><strong>Do you want to set up a schema?</strong></label>
+                <label class="inline-block"><span>Yes</span> <input type="radio" name="setup_schema" /></label>
+                <label class="inline-block"><span>No</span> <input type="radio" name="setup_schema" /></label>
+            </aside>
+        </form>
+    </div>
+    <div id="dashing_json_content" class="memory">{
+        "data": {
+            "SpaceTypes": {
+                "datalists": {
+                    "keys": ["WorldsList", "SilosList", "DataSheetsList"], 
+                    "WorldsList": ["Gaming Default", "Gaming 3D", "Scientific Default", "Scientific 3D"], 
+                    "SilosList": ["Cartesian Default", "Cartesian 3D", "Lab Default"], 
+                    "DataSheetsList": ["Traditional Default", "Dynamic Default"] 
+                }
+            },
+            "sidebar": {
+                "node": "shiftboxUI",
+                "allowCollapse": true,
+                "allowDragDrop": true,
+                "contentPanes": {
+                    "allowSetStorage": true,
+                    "allowSetIndexDB": true
+                },
+                "menuPane": {
+                    "allowCollapse": true,
+                    "allowDragDrop": true
+                }
+            },
+            "schema": {
+                "stores": {
+                    "keys": ["environment", "session"],
+                    "environment": { },
+                    "session": { } 
+                }
+            } 
+        },
+        "scripts": {
+            "keys": ["space","space-sidebar", "space-form"],
+            "space": "Dashing/default/space.js",
+            "space-sidebar": "Dashing/default/space-sidebar.js",
+            "space-form": "Dashing/default/space-form.js"
+        }
+    }</div>
+    <style type="text/css">
+        #space-section {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            display: block;
+            background-color: aliceblue;
+            font-size: 1.75vw; 
+            font-family: 'Arial Rounded MT';
+        }
+        #space-template {
+            height: 100%;
+        }
+        #pluginspaces-menu {
+            position: absolute;
+            width: 19%;
+            height: 98%;
+            border: 1px dashed skyblue;
+            margin-left: 5px;
+        }
+            #pluginspaces-menu > x-shiftbox {
+                position: relative;
+                width: 100%; 
+                height: 75%;
+            }
+            #pluginspaces-menu > x-shiftbox > section > menu {
+                position: relative;
+                width: 99%;
+                height: auto;
+                padding: 0px;
+                border: 1px dotted black;
+                display: flex;
+                flex-direction: column;
+            }
+            #pluginspaces-menu > x-shiftbox > section > menu > button {
+                border: solid black 1px;
+                height: 25px;
+            }
+                #pluginspaces-menu > x-shiftbox > aside {
+                    display: none;
+                    opacity: 0;
+                }
+                #pluginspaces-menu > x-shiftbox[open] > aside {
+                    z-index: 1;
+                    background-color: cornflowerblue;
+                    top: 0px;
+                    left: 0px;
+                    margin: 0px;
+                    opacity: 0;
+                }
+                #pluginspaces-menu > x-shiftbox[open="left"] > aside[shift="left"] {
+                    display: block;
+                    margin-left: 35px;
+                    width: calc(100% - 35px);
+                    height: 100%;
+                    opacity: 1;
+                    background-color: deepskyblue;
+                    transition: width ease-in-out 5s;
+                }
+                    #pluginspaces-menu > x-shiftbox[open="left"] > aside[shift="left"] > form {
+                        height: auto;
+                        background-color: rgba(0,0,0,0);
+                    }
+                #pluginspaces-menu > x-shiftbox[open="right"] > aside[shift="right"] {
+                    display: block;
+                    margin-right: 35px;
+                    width: calc(100% - 35px);
+                    height: 100%;
+                    opacity: 1;
+                    background-color: deepskyblue;
+                    transition: width ease-in-out 5s;
+                }
+                    #pluginspaces-menu > x-shiftbox[open="right"] > aside[shift="right"] > form {
+                        height: auto;
+                        background-color: rgba(0,0,0,0);
+                    }
+                #pluginspaces-menu > x-shiftbox[open="up"] > aside[shift="up"] {
+                    display: block;
+                    margin-top: 35px;
+                    width: 100%;
+                    height: calc(100% - 35px);
+                    opacity: 1;
+                    background-color: deepskyblue;
+                    transition: width ease-in-out 5s;
+                }
+                    #pluginspaces-menu > x-shiftbox[open="up"] > aside[shift="up"] > form {
+                        height: auto;
+                        background-color: rgba(0,0,0,0);
+                    }
+                #pluginspaces-menu > x-shiftbox[open="down"] > aside[shift="down"] {
+                    display: block;
+                    margin-top: 0px;
+                    width: 100%;
+                    height: calc(100% - 35px);
+                    opacity: 1;
+                    background-color: deepskyblue;
+                    transition: width ease-in-out 5s;
+                }
+                    #pluginspaces-menu > x-shiftbox[open="down"] > aside[shift="down"] > form {
+                        height: auto;
+                        background-color: rgba(0,0,0,0);
+                    }
+        #space-template > form { 
+            position: relative; 
+            width: 60%;
+            margin: 5px;
+            left: 20%; 
+            height: 90%;
+            background-color: rgba(100, 100, 100, .5);
+            font-family: 'Arial Rounded MT';
+        }
+            #space-template > form > aside > label > input[list] {
+                border: none;
+                border-bottom: dotted 1px black;
+                font-size: 1.125vw;
+                font-family: 'Arial Rounded MT';
+                margin-top: 8px;
+                margin-bottom: 8px;
+                margin-left: 22px;
+                width: 50%;
+            }
+            #space-template > form > aside > label > strong {
+                border: none; 
+                font-size: 1.25vw;
+                font-family: 'Arial Rounded MT';
+            }
+
+            #space-template > form > aside > div.radio-opts {
+                margin: 5px;
+                margin-left: 18px;
+            }
+
+            #space-template > form > aside {
+                display: grid; 
+                grid-template-columns: auto; 
+                grid-template-rows: auto; 
+                background-color: aliceblue; 
+                border: none; 
+                border-bottom: dotted 1px black; 
+                margin: 8px; 
+                padding: 3px; 
+                font-family: 'Arial Rounded MT'; 
+            }
+                #space-template > form > aside > label > button {
+                    background-color: aliceblue;
+                    border: dotted 1px black;
+                    height: 25px;
+                    width: 100px;
+                    margin: 5px;
+                    border-radius: 25px;
+                    font-family: 'Arial Rounded MT';
+                    box-shadow: rgba(0,0,255,.25) 5px 0px 10px;
+                } 
+                #space-template > form > aside > label > button:hover { 
+                    background-color: cornflowerblue; 
+                    box-shadow: rgba(0, 0, 255,.4) 10px 5px 10px; 
+                    transition: background-color ease-in-out .25s, box-shadow ease-in-out .25s; 
+                }
+                    #space-template > form > aside > label > button > svg.rotate-up {
+                        position: relative;
+                        width: 15px;
+                        height: 15px;
+                        background-color: whitesmoke;
+                        border-radius: 10px;
+                        left: 0px;
+                        top: 0px;
+                        display: block;
+                        box-shadow: rgba(0,0,25,.4) 10px 0px 10px inset;
+                        transform: rotate(90deg);
+                        padding: 3px;
+                    }
+
+
+                    .hlist-spacing {
+                        padding-left: 5px;
+                        padding-right: 5px;
+                    }
+                    .x-shiftbox-tapclose-overlay {
+                        position: absolute;
+                        background-color: rgba(25, 25, 25, .9);
+                        left: -100% !important;
+                    }
+    </style>
+</template>

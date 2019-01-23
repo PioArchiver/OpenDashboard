@@ -1,49 +1,56 @@
 {
-  "keys": ["plugins", "templates", "worlds", "silos", "spreadsheets", "data"],
+  "keys": [ "plugins", "Worlds", "Silos", "DataSheets", "Spaces" ],
   "meta": {
-    "alias":  "Magi",
-    "name": "PioDashed",
+    "maintainer": "PioArchiver",
+    "company": "Kippikio",
     "title": "Pio Dashed",
     "documentation": "/documentation/docs.html",
-    "description": "Multimedia management system for small business software franchise business groups.",
+    "description": "Multimedia management system for small businesses.",
+    "github": {
+      "url": "https://github.com/PioArchiver/OpenDashboard",
+      "public": false,
+      "wiki": true,
+      "issues": true,
+      "projects": true
+    },
     "version": 0
   },
+  "schema": {
+    "stores": {
+      "names": [ "patron", "environment", "session" ],
+      "patron": {
+        "keys": ["alias", "coalias", "dbname", "version"]
+      },
+      "environemnt": {
+        "keys": []
+      },
+      "session": {
+        "keys": []
+      }
+    }
+  },
   "plugins": {
-    "keys": [ "worlds", "silos", "DataSheets" ],
-    "length": 0
-  },
-  "themes": {
-    "length": 0
-  },
-  "templates": {
-    "length": 0
+    "titles": [ "Worlds", "Silos", "Data Sheets", "Spaces" ] 
+    "dbnames": [ "Worlds", "Silos", "DataSheets", "Spaces" ]
   },
   "Worlds": {
-    "proot": "/plugins/worlds/",
-    "default": {
-      "filename":  "basic-world.html"
-    },
-    "length": 1
+    "version": 0,
+    "hasSchema": true,
+    "indexedDB":  true
   },
   "Silos": {
-    "proot": "/plugins/silos/",
-    "projects": {
-      "default": {
-        "title": "Default Silo",
-        "indexname": "basic-silo.html",
-        "scriptname": "basic-silo.js",
-        "": {
-
-        }
-      }
-    },
-    "length": 1
-    },
+    "version": 0,
+    "hasSchema": true,
+    "indexedDB": true
+  },
   "DataSheets": {
-    "version":  1
+    "version": 0,
+    "hasSchema": true,
+    "indexedDB": true
   },
-  "data": {
-    "length": 0
-  },
-    "IndexedDB": false
+  "Spaces": {
+    "version": 0,
+    "hasSchema": true,
+    "indexedDB": true
   }
+}

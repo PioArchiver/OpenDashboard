@@ -29,7 +29,8 @@
     @name X-EXTENSION 
     ===== == -->
     <x-extension type="webapp" id="pio_root_extension" class="dashio-extension" theme="dashboard-panels"
-                 append-resources="true"
+                 plugin-book="dash_book" 
+                 append-resources="true" 
                  data-grid-template="1 3">
         <!-- X-HEADER -->
         <x-header id="header" class="header slim-bar" type="startup" position="top" 
@@ -38,7 +39,7 @@
                 <strong class="main-title">Pio Dashed</strong>
                 <button id="toggle-setup" class="toggle-btn float-right" active="true">
                     <svg width="80px" height="30px">
-                        <use xlink:href="#cogs" x="-10px" y="5"transform="scale(.75)"></use>
+                        <use xlink:href="#cogs" x="-10px" y="5" transform="scale(.75)"></use>
                         <use xlink:href="#database" x="50px" y="25" transform="scale(.5)"></use>
                     </svg>
                 </button>
@@ -46,7 +47,10 @@
         </x-header>
 
         <!-- X-BOOK -->
-        <x-book id="dash_book" class="book" application-start-page="#welcome-screen" type="plugins" theme="plugin-book" page="1" pages="4" data-resize="extension-book">
+        <x-book id="dash_book" class="book" type="plugins" theme="plugin-book" 
+                page="1" pages="4"
+                application-start-page="#space-plugin" 
+                plugin-book="true" plugin-pages="true">
             <button page-left="true" book="dash_book">
                 <svg width="100px" height="30px">
                     <use xlink:href="#puzzle-piece" x="29px" y="15px" width="15px" height="15px" fill="white"></use>
@@ -60,27 +64,30 @@
                 </svg>
             </button>
             <!-- X-PAGE -->
-            <x-page id="welcome-screen" class="plugin plugin-page plugin-panel" page="1" box-shadow="" 
-                    type="webapp" theme="default" plugin-title="Spaces" 
+            <x-page id="space-plugin" class="plugin plugin-page plugin-panel" page="1" box-shadow="" 
+                    type="plugin" theme="default" plugin-title="Spaces" 
+                    active-content="Dashing/default/basic-space.html" 
+                    page-workspace="space-section" 
+                    page-sidebar="shiftboxUI"
                     transition-start="slide-right" transition-end="slide-down" 
                     data-grid-template="1 3" active="true" selected="true"> 
-                <header id="startup-header" class="header header-startup" data-grid-template="2 1">
-                    <h5 class="no-margin no-padding inline-block font-fitted">Dashboard || Media Management System</h5>
-                    <x-tabbox id="spreadsheet-tabbox" transition selected-index="0" tab-position="top">
-                        <menu class="tabs-menu">
-                            <button data-icon="add" hover="highlight" data-active="focused-highlight" index="0" selected>Create Space</button>
-                            <button data-icon="open" hover="highlight" data-active="focused-highlight" index="1">Open Space</button>
-                            <button data-icon="archive" hover="highlight" data-active="focused-highlight" index="2">Remove Space</button>
-                        </menu>
-                        <ul>
-                            <li class="inline-flex" selected="">
+                <header id="startup-header" class="header header-startup" data-grid-template="2 1"> 
+                    <h5 class="no-margin no-padding inline-block font-fitted">Dashboard || Media Management System</h5> 
+                    <x-tabbox id="spreadsheet-tabbox" transition selected-index="0" tab-position="top"> 
+                        <menu class="tabs-menu"> 
+                            <button data-icon="add" hover="highlight" data-active="focused-highlight" index="0" selected>Create Space</button> 
+                            <button data-icon="open" hover="highlight" data-active="focused-highlight" index="1">Open Space</button> 
+                            <button data-icon="archive" hover="highlight" data-active="focused-highlight" index="2">Remove Space</button> 
+                        </menu> 
+                        <ul> 
+                            <li class="inline-flex" selected=""> 
                                 <form id="create-space" class="table inline-block form-section"> 
-                                    <label>
-                                        <span>Space Name: </span>
-                                        <input type="text" placeholder="Create Space." /><input type="button" value="Create" />
-                                    </label>
-                                </form>
-                            </li>
+                                    <label> 
+                                        <span>Space Name: </span> 
+                                        <input type="text" placeholder="Create Space." /><input type="button" value="Create" /> 
+                                    </label> 
+                                </form> 
+                            </li> 
                             <li class="inline-flex">
                                 <form id="open-space" class="table form-section">
                                     <label>
@@ -101,20 +108,27 @@
                     </x-tabbox>
                 </header>
                 <section id="startup-section" class="column-flex">
-                    <h1>Work in Progress!</h1>
-                    <p style="background-color:rgba(255,255,255,.5);">I will be rolling out updates throughout the year!</p>
-                    <p style="background-color:rgba(255,255,255,.5);">This is just an application framework package. <br /> 
-                    [Hint: If you know javascript you can do magical things!]</p>
+                    <div id="space-section"></div>
                 </section>
                 <footer>
                     <menu>
-                        <button>DOCS</button>
+                        <button>
+                            <svg class="icon svg-icon">
+                                <use xlink:href="#dev-report" class="icon-def" />
+                            </svg>
+                        </button>
+                        <button>
+                            <svg class="icon svg-icon">
+                                <use xlink:href="#info-circle" class="icon-def" />
+                            </svg>
+                        </button>
                     </menu>
                 </footer>
             </x-page>
             <!-- X-PAGE -->
             <x-page id="spreadsheet-plugin" class="plugin plugin-page plugin-panel" type="plugin" theme="default" page="2" 
-                    plugin-title="DataSheets" plugin-href="datasheets.html"
+                    plugin-title="DataSheets" 
+                    page-workspace="spreadsheet-section"
                     transition-start="slide-right" transition-end="slide-down" box-shadow="" data-grid-template="1 3">
                 <header id="spreadsheet-header" class="header header-spreadsheet" data-grid-template="2 1">
                     <h5 class="no-margin no-padding inline-block font-fitted">Spreadsheet Editor</h5>
@@ -171,13 +185,14 @@
                 <footer></footer>
             </x-page>
             <!-- X-PAGE -->
-            <x-page id="physics2d-plugin" class="plugin plugin-page plugin-panel" type="plugin" theme="default" page="3" 
-                    plugin-title="Worlds" 
+            <x-page id="world-plugin" class="plugin plugin-page plugin-panel" type="plugin" theme="default" page="3" 
+                    plugin-title="Worlds" active-content="plugins/worlds/default/basic-world.html"
+                    page-workspace="physics-section" 
                     transition-start="slide-right" transition-end="slide-down" 
                     box-shadow="" data-grid-template="1 3">
                 <header id="physics2d-header" class="header header-physics" data-grid-template="2 1">
                     <h5 class="no-margin no-padding inline-block font-fitted">Physics World Management</h5>
-                    <x-tabbox id="physics-tabbox" type="toolbox" transition selected-index="0" tab-position="top">
+                    <x-tabbox id="physics-tabbox" transition selected-index="0" tab-position="top">
                         <menu class="tabs-menu">
                             <button index="0" hover="highlight" data-active="focused-highlight">World Creator</button>
                             <button index="1" hover="highlight" data-active="focused-highlight">Open Creation</button>
@@ -213,19 +228,47 @@
                 </header>
                 <section id="physics-section">
                     <h1>Work Board</h1>
-                    <aside class="tree-selector">
-                        <strong class="selection-field">Active World</strong>
+                    <x-tabbox class="selection-field" transition selected-index="0" tab-position="left">
+                        <menu>
+                            <button index="0" type="button">Mapping</button>
+                            <button index="1" type="button">Bodies</button>
+                            <button index="2" type="button">Controls</button>
+                        </menu>
                         <ul class="selection-list">
-                            <li>None Found</li>
+                            <li>
+                                <h3>Vector Mapping</h3><hr />
+                                <section class="tabbox-panels">
+                                    <p>Please choose a vector map type for your environment.</p>
+                                </section>
+                                <h3>Potential Mapping</h3><hr />
+                                <section class="tabbox-panels">
+                                    <p>Please choose a potential map type for your environment.</p>
+                                </section>
+                            </li>
+                            <li>
+                                <h3>Vector Bodies</h3><hr />
+                                <section class="tabbox-panels"></section>
+                                <h3>Potential Bodies</h3><hr />
+                                <section class="tabbox-panels"></section>
+                            </li>
+                            <li>
+                                <h3>Interface Type</h3><hr />
+                                <section class="tabbox-panels"></section>
+                                <h3>Platform Details</h3><hr />
+                                <section class="tabbox-panels"></section>
+                            </li>
                         </ul>
-                    </aside>
-                    <div class="selected-content"></div>
+                    </x-tabbox>
                 </section>
-                <footer></footer>
+                <footer>
+                    <div id="world-workspace" class="world-workspace">
+                        <h3>Compiled World</h3><hr />
+                    </div>
+                </footer>
             </x-page>
             <!-- X-PAGE -->
             <x-page id="graphing-plugin" class="plugin plugin-page plugin-panel" page="4" 
-                    data-grid-template="1 3" 
+                    grid-template="1 3" 
                     type="plugin" theme="default" 
                     plugin-title="Silos" active-content="plugins/silos/default/basic-silo.html"
                     page-workspace="silo-wspace" page-sidebar="section-toolbar"
@@ -264,33 +307,35 @@
                 <section id="graphing-section" grid-template="2 2">
                     <h1>Work Board</h1>
                     <aside id="section-toolbar" class="toolbar" toolbar-position="left" grid-template="3 1" grid-columns="1" grid-rows="2 2">
-                        <x-tabbox transition selected-index="0" tab-position="top">
-                            <menu>
-                                <button index="0" hover="highlight" data-active="focused-highlight">
-                                    <svg width="35px" height="35px">
-                                        <use xlink:href="#hand-pointer" x="5" y="3" width="20px" height="20px"></use>
-                                        <use xlink:href="#microscope" x="20" y="17" width="15px" height="15px"></use>
-                                    </svg>
-                                </button>
-                                <button index="1" hover="highlight" data-active="focused-highlight">
-                                    <svg width="35px" height="35px">
-                                        <use xlink:href="#layer-group" x="5" y="3" width="20px" height="20px"></use>
-                                        <use xlink:href="#microscope" x="20" y="17" width="15px" height="15px"></use>
-                                    </svg>
-                                </button>
-                            </menu>
-                            <ul>
+                        <x-tabbox transition selected-index="0" tab-position="top"> 
+                            <menu> 
+                                <button id="activate-cursor-options" index="0" hover="highlight" data-active="focused-highlight" title="Selection Tool"> 
+                                    <svg width="35px" height="35px"> 
+                                        <use xlink:href="#hand-pointer" x="2" y="3" width="20px" height="20px"></use> 
+                                        <use xlink:href="#search" x="22" y="22" width="10px" height="10px"></use> 
+                                    </svg> 
+                                </button> 
+                                <button id="activate-panning-options" index="1" hover="highlight" data-active="focused-highlight" title="Zoom and Pan"> 
+                                    <svg width="35px" height="35px"> 
+                                        <use xlink:href="#arrows-alt" x="2" y="3" width="20px" height="20px"></use> 
+                                        <use xlink:href="#search" x="22" y="22" width="10px" height="10px"></use> 
+                                    </svg> 
+                                </button> 
+                            </menu> 
+                            <ul> 
                                 <li selected="">
-                                    <button type="button">
-                                        <svg width="30px" height="30px">
+                                    <strong>Selection Tools</strong>
+                                    <button type="button" sidebar-event="selector" selected="">
+                                        <svg width="35px" height="35px">
                                             <use xlink:href="#bullseye-pointer" x="5" y="3" width="25px" height="25px"></use>
                                         </svg>
                                     </button>
-                                </li>
+                                </li> 
                                 <li>
-                                    <button type="button">
+                                    <strong>Panning/Zoom Tools</strong>
+                                    <button type="button" id="activate-panning" sidebar-event="panning">
                                         <svg width="35px" height="35px">
-                                            <use xlink:href="#bullseye-arrow" x="5" y="3" width="25px" height="25px"></use>
+                                            <use xlink:href="#expand-arrows-darkgrey" x="5" y="3" width="25px" height="25px"></use>
                                         </svg>
                                     </button>
                                 </li>
@@ -311,14 +356,14 @@
                             </menu>
                             <ul>
                                 <li>
-                                    <button type="button">
+                                    <button type="button" sidebar-event="">
                                         <svg width="35px" height="35px">
                                             <use xlink:href="#paint-brush-alt" x="5" y="3" width="25px" height="25px"></use> 
                                         </svg>
                                     </button>
                                 </li>
                                 <li>
-                                    <button type="button">
+                                    <button type="button" sidebar-event="">
                                         <svg width="35px" height="35px">
                                             <use xlink:href="#draw-polygon" x="5" y="3" width="25px" height="25px"></use>
                                         </svg>
@@ -341,7 +386,7 @@
                             </menu>
                             <ul>
                                 <li>
-                                    <button type="button">
+                                    <button type="button" sidebar-event="">
                                         <svg width="35px" height="35px">
                                             <use xlink:href="#palette" x="5" y="3" width="25px" height="25px"></use>
                                         </svg>
@@ -349,7 +394,7 @@
                                 </li>
                                 <li>
                                     <button type="button">
-                                        <svg width="35px" height="35px">
+                                        <svg width="35px" height="35px" sidebar-event="">
                                             <use xlink:href="#fill" x="5" y="3" width="25px" height="25px"></use>
                                         </svg>
                                     </button>
@@ -382,13 +427,6 @@
         <!-- X-FOOTER -->
         <x-footer class="footer" type="startup" mode="default" data-resize="extension-footer">
             <h3>Data Deck</h3>
-            <nav type="defaultUiEvents" mode="default" showing edge="bottom" cover>
-                <h3>Pio Dashed Documentation</h3>
-                <a href="#">HTML Elements</a>
-                <a href="#">Dashboard Framework</a>
-                <a href="#">Kippikio Source</a>
-                <a href="#">Kippikio Anvil</a>
-            </nav>
         </x-footer>
     </x-extension>
 

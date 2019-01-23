@@ -1,14 +1,14 @@
 ﻿    #graphing-plugin > section {
-        grid-template-columns: 88px auto;
+        grid-template-columns: 200px auto;
         grid-template-rows: 65px auto;
         padding: 0px;
     }
         #graphing-plugin > section > aside[toolbar-position="left"] {
-            grid-template-columns: 88px;
+            grid-template-columns: 200px;
             grid-template-rows: auto auto auto;
         }
             #graphing-plugin > section > aside[toolbar-position="left"] > x-tabbox {
-                grid-template-columns: 88px;
+                grid-template-columns: 200px;
                 grid-template-rows: auto auto auto;
                 border-right: dotted black 1px;
                 border-bottom: dotted black 1px;
@@ -17,19 +17,42 @@
                 #graphing-plugin > section > aside[toolbar-position="left"] > x-tabbox > menu > button {
                     border-right: dotted black 1px;
                     border-bottom: dotted black 1px;
-                    background-color: rgba(145,145,145,.5);
+                    background-color: rgba(255,145,75,.5);
+                    padding-top: 7px;
+                    padding-bottom: 5px;
+                    box-shadow: rgba(0, 0, 0, .5) 0px 0px 5px inset;
                 }
+                    #graphing-plugin > section > aside[toolbar-position="left"] > x-tabbox > menu > button[selected] {
+                        border: dashed yellow 1px;
+                        background-color: rgba(255,255,225,.5);
+                    }
                     #graphing-plugin > section > aside[toolbar-position="left"] > x-tabbox > menu > button:hover {
                         transition: background-color ease-in-out .5s;
                         background-color: rgba(245,245,145,.25);
-                    } 
-                    #graphing-plugin > section > aside[toolbar-position="left"] > x-tabbox > menu > button > svg {
-                        border-radius: 50px 50px 5px 50px;
-                        background-color: ghostwhite;
                     }
+                    #graphing-plugin > section > aside[toolbar-position="left"] > x-tabbox > menu > button > svg {
+                        border-radius: 5px 15px 5px 15px;
+                        background-color: ghostwhite;
+                        box-shadow: rgba(0, 0, 0, .5) 0px 5px 5px;
+                    }
+
+                        #graphing-plugin > section > aside[toolbar-position="left"] > x-tabbox > ul > li > button {
+                            border: solid black 1px; 
+                            background-color: rgba(255, 200, 150, .9); 
+                            box-shadow: rgba(0, 0, 0, .5) 0px 0px 5px inset; 
+                            width: 100%; 
+                            transition: background-color linear .25s;
+                        }
+
+                            #graphing-plugin > section > aside[toolbar-position="left"] > x-tabbox > ul > li > button[selected] {
+                                border: dotted yellow 1px;
+                                background-color: rgba(255,255,50, .125);
+                                box-shadow: rgba(0, 0, 0, .5) 0px 0px 5px inset;
+                                transition: background-color linear .25s;
+                            }
 
             #graphing-plugin > section > div.selected-content {
                 background-color: rgba(255,255,255,.9);
-                padding: 10px;
+                padding: 0px;
             }
         

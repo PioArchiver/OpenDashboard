@@ -119,6 +119,10 @@ input[type="lsit"] {
     border: var(--json-key-border);
     background-color: var(--json-key-bgcolor);
 }
+.fill-50px {
+    width: 100%;
+    height: 50px;
+}
 .fill-100px {
     width: 100%;
     height: 100px;
@@ -142,6 +146,16 @@ input[type="lsit"] {
     animation-duration: 1s;
     animation-iteration-count: infinite;
     position: relative;
+}
+
+/* ICONS CLASSES */
+.svg-icon, .use-def {
+    width: 25px;
+    height: 25px;
+}
+.svg-icon > .use-def {
+    width: 100%;
+    height: 100%;
 }
 
 /* TEXT CLASSES */

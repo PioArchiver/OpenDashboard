@@ -130,11 +130,11 @@ x-book {
         background-color: rgba(125,255,125,.25);
     }
 
-    @media screen and (max-width:"678px") { 
-        x-book > button[page-left] { 
-            grid-column: 1/ span 2; 
-            grid-row: 1; 
-            padding: 5px; 
+    @media screen and (max-width:"678px") {
+        x-book > button[page-left] {
+            grid-column: 1/ span 2;
+            grid-row: 1;
+            padding: 5px;
         } 
 
         x-book > button[page-right] { 
@@ -179,21 +179,21 @@ x-page {
         height: 100%; 
     }
         x-header > div.toolbar > strong.main-title {
-            position: absolute;
-            top: 0px;
-            display: inline-block;
-            margin: 0px;
-            margin-left: 15px;
-            height: 40px;
-            font-size: 18px;
-            padding: 0px;
-            padding-left: 15px;
-            padding-right: 15px;
-            background-color: rgba(0, 200, 135, .125);
-            border-radius: 0px 0px 15px 15px;
-            border: 1px solid black;
-            border-top: none;
-            color: rgba(100,100,100,1);
+            position: absolute; 
+            top: 0px; 
+            display: inline-block; 
+            margin: 0px; 
+            margin-left: 15px; 
+            height: 40px; 
+            font-size: 18px; 
+            padding: 0px; 
+            padding-left: 15px; 
+            padding-right: 15px; 
+            background-color: rgba(145,255,145,.5); 
+            border-radius: 0px 0px 15px 15px; 
+            border: 1px solid black; 
+            border-top: none; 
+            color: rgba(100,100,100,1); 
         }
         x-header > div.toolbar > button.tab-btn {
             position: relative;
@@ -218,12 +218,11 @@ x-page {
             border-right: none;
             background-color: rgba(255, 135, 0, .35);
         }
-        x-header > div.toolbar > strong.main-title:hover,
         x-header > div.toolbar > button.toggle-btn:hover {
             border: 1px dashed;
             border-top: none;
             border-right: none;
-            background-color: rgba(225,225,0,.5);
+        background-color: rgba(125,255,125,.25);
         } 
         @media screen and (max-width: 1100px ) {
             x-header > div.toolbar > strong.main-title {
@@ -337,7 +336,7 @@ x-page {
         z-index: 1;
         display: grid;
         visibility: visible;
-        overflow: auto;
+        overflow: hidden;
         width: 100%;
         height: 100%;
     }
