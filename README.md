@@ -1,6 +1,6 @@
 # Dashboard  
 
-The Dashboard is the web application frame work that builds, Kippikio Companies online online resources. 
+The Dashboard is the web application frame work that builds, Kippikio Companies online resources. 
 
 ___  
 ## Road Map 
