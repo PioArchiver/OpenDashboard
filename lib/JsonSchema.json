@@ -30,7 +30,7 @@
     }
   },
   "plugins": {
-    "titles": [ "Worlds", "Silos", "Data Sheets", "Spaces" ] 
+    "titles": [ "Worlds", "Silos", "Data Sheets", "Spaces" ], 
     "dbnames": [ "Worlds", "Silos", "DataSheets", "Spaces" ]
   },
   "Worlds": {
