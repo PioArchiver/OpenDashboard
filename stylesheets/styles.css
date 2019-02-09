@@ -47,7 +47,7 @@ input:hover,textarea:hover,button:hover{
 	background: rgba(245,245,245,.3125);
 }
 input[type="text"],
-input[type="lsit"] {
+input[type="list"] {
     border: none;
     border-bottom: 1px solid black;
     margin-top: 5px;
@@ -118,6 +118,22 @@ input[type="lsit"] {
 .json-key {
     border: var(--json-key-border);
     background-color: var(--json-key-bgcolor);
+}
+.fill-5px {
+    width: 100%;
+    height: 5px;
+}
+.fill-10px {
+    width: 100%;
+    height: 10px;
+}
+.fill-13px {
+    width: 100%;
+    height: 13px;
+}
+.fill-15px {
+    width: 100%;
+    height: 15px;
 }
 .fill-50px {
     width: 100%;

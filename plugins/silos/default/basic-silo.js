@@ -87,7 +87,8 @@
             }
         }, {
             selector: 'node[id="r2"]',
-            style: {
+                style: {
+                content: "data(id)",
                 width: 25,
                 height: 25,
                 shape: "polygon",

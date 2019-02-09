@@ -694,3 +694,17 @@ x-shiftbox {
     border: none !important;
     z-index: 100
 }
+
+/* x-list */
+x-list {
+    position: relative;
+    display: grid;
+    height: 120px;
+    grid-template-columns: auto auto;
+    grid-template-rows: 30px 30px 30px 30px;
+    overflow: hidden;
+}
+    x-list > * {
+        border-bottom: dotted 1px lightskyblue;
+        border-left: dotted 1px deepskyblue;
+    }

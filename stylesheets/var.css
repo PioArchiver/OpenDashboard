@@ -16,4 +16,6 @@
     --centered-gridpanel-height: calc(100% - var(--slimbutton-height) + var(--menubar-height));
     --pio-header-bgcolor: rgba(78,115,155,.5);
     --table-messages-font: arial 13px;
+    --default-border-pane: 1px dashed deepskyblue;
+    --default-border-btn: 1px dotted steelblue;
 }

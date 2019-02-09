@@ -1,6 +1,12 @@
-﻿(function() {
+﻿/** 
+ *  Licensce: MIT 
+ *  Filename: space-sidebar.js 
+ *  Company: Kippikio Company
+ *  Developers: Steven Van Sant
+ * */
+(function () {
     const _app = document.querySelector("x-extension"),
-        _ext = _app.enxtensions,
+        _ext = _app.extensions,
         _plugins = _app.extensions.plugins,
         _plugin = _plugins["space-plugin"];
 
@@ -26,23 +32,24 @@
             _list_.id = attrs.id;
 
             for (var i = 0; i < _list.length; i++) {
-                let _opt = document.createElement("option");
+                let _opt = document.createElement("option"),
+                    _val = `${_list[i]} --- [${attrs.title || false}]`;
 
-                _opt.value = _list[i];
+                _opt.value = _val; _opt.innerHTML = _val;
 
                 _list_.appendChild(_opt);
-                _listing_.push(`${_list[i]} [${attrs.title||false }]`);
+                _listing_.push(_val);
             }
             this.items = _list_;
         } 
-        // Creates a merged type datalist
+        // Creates a merged datalist
         CreateFromListings() { 
             let _datalist_ = document.createElement("datalist"),
                 index = _listing_.length;
 
             for (let i = 0; i < index; i++) {
                 let opts = document.createElement("option"); 
-                opts.innerHTML = `${_listing_[i]}`;
+                opts.innerHTML = _listing_[i]; opts.value = _listing_[i];
                 _datalist_.appendChild(opts); 
             }
 
@@ -51,21 +58,19 @@
         setOptionAttrs(_opt_) { 
             //
         } 
-        set listing(item) { 
-            this.listings.push(item);
-        } 
+        set listing(item) { this.listings.push(item); } 
     } 
 
     const _listtitles = [
-        "Worlds",
-        "Silos",
-        "Data Sheets"
-    ];
-    const _listids = [
-        "WorldsDatalist",
-        "SilosDatalist",
-        "DataSheetsDatalist"
-    ];
+            "Worlds",
+            "Silos",
+            "Data Sheets"
+        ],
+         _listids = [
+            "WorldsDatalist",
+            "SilosDatalist",
+            "DataSheetsDatalist"
+        ];
     for (let i = 0; i < _data_space_lists_keys.length; i++) {
         let _list = _data_space_lists[_data_space_lists_keys[i]], 
             _listed = new datalists(_list, {
