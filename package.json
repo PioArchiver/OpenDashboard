@@ -11,10 +11,5 @@
   },
   "license": "MIT",
   "version": "0.0.0",
-  "dependencies": {
-    "cytoscape": "^3.2.11",
-    "lotusjs": "0.0.2",
-    "physicsjs": "^0.7.0",
-    "x-tag": "^2.0.1-alpha"
-  }
+  "dependencies": {}
 }
